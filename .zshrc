@@ -18,7 +18,7 @@ _SSHFS_ZID=z1234567
 _SSHFS_CSE_MOUNT="$HOME/cse"
 
 alias csemount="mkdir -p ${_SSHFS_CSE_MOUNT} && sshfs -o idmap=user -C ${_SSHFS_ZID}@login.cse.unsw.edu.au: ${_SSHFS_CSE_MOUNT}"
-alias cseunmount="fusermount -zu ${_SSHFS_CSE_MOUNT} && rmdir ${_SSHFH_CSE_MOUNT}"
+alias cseunmount="fusermount -zu ${_SSHFS_CSE_MOUNT} && rmdir ${_SSHFS_CSE_MOUNT}"
 
 function cse() {
     # determine where we are relative to the mountpoint (thanks @ralismark)
