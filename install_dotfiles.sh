@@ -10,7 +10,7 @@ function dotfiles {
 }
 
 # Back up existing dotfiles if necessary
-if ! dotfiles checkout > /dev/null; then
+if ! dotfiles checkout > /dev/null 2>&1; then
     echo "Backing up pre-existing dot files.";
     dotfiles checkout 2>&1 | egrep "\s+\..*/" | awk {'print $1'} | xargs -I{} dirname {} | xargs -I{} mkdir -p $DOTFILES_BACKUP_DIR/{}
     dotfiles checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} $DOTFILES_BACKUP_DIR/{}
