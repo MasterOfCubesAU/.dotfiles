@@ -20,4 +20,4 @@ fi;
 echo "Applied dotfiles";
 dotfiles config status.showUntrackedFiles no
 
-rm -- "$HOME/README.md" "$0" 
+rm -- "$HOME/README.md" "$HOME/install_dotfiles.sh" 
