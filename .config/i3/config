@@ -199,4 +199,4 @@ bar {
         status_command i3blocks
 }
 exec i3-msg workspace 1
-exec --no-startup-id /home/brandon/github/i3-alternating-layout/alternating_layouts.py
+exec --no-startup-id ~/.config/i3/alternating_layouts.py
