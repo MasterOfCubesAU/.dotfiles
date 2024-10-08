@@ -186,6 +186,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bindsym $mod+Shift+greater move workspace to output right
+bindsym $mod+Shift+less move workspace to output left
+
 exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal'
 # exec --no-startup-id i3-msg 'workspace 2; exec brave-browser'
 assign [class="Brave"] 2
@@ -195,7 +198,7 @@ assign [class="Discord"] 3
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        font pango:Exo2, FontAwesome5Free, FontAwesome5Brands, SymbolsNerdFont 10
+        font pango:Exo2, FontAwesome5Free, FontAwesome5Brands, SymbolsNerdFont 8
         status_command i3blocks
 }
 exec i3-msg workspace 1
