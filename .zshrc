@@ -1,23 +1,22 @@
 export ZSH="$HOME/.oh-my-zsh"
-
 ZSH_THEME="philips"
-
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Aliases
-
+##### ALIASES #####
 alias cd=z
 alias c=cd
 alias cat=batcat
 alias v=vim
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-_SSHFS_ZID=z1234567
+##### CSE MOUNTING/SSH #####
+
+_SSHFS_ZID=zXXXXXXX
 _SSHFS_CSE_MOUNT="$HOME/cse"
 
-alias csemount="mkdir -p ${_SSHFS_CSE_MOUNT} && sshfs -o idmap=user -C ${_SSHFS_ZID}@login.cse.unsw.edu.au: ${_SSHFS_CSE_MOUNT}"
+alias csemount="mkdir -p ${_SSHFS_CSE_MOUNT} && sshfs -o idmap=user -C ${_SSHFS_ZID}@login.cse.unsw.edu.au:${_SSHFS_CSE_MOUNT}"
 alias cseunmount="fusermount -zu ${_SSHFS_CSE_MOUNT} && rmdir ${_SSHFS_CSE_MOUNT}"
 
 function cse() {
@@ -49,12 +48,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+##### PATH ADDITIONS #####
+PATH=$PATH:/root/.local/bin
 
 eval "$(zoxide init zsh)"
